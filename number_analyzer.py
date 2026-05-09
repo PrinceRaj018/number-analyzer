@@ -1,108 +1,137 @@
-num = int(input("enter your number:  "))
-original = num
+while True:
+    print("1. Even / Odd")
+    print("2. Prime Check")
+    print("3. Palindrome Check")
+    print("4. Armstrong Check")
+    print("5. Factorial")
+    print("6. Digit Sum")
+    print("7. Largest Digit")
+    print("8. Smallest Digit")
+    print("9. Exit")
+    print("-" * 30)
 
-# Even / Odd
-if num % 2 == 0:
-    print("Even Number")
-else:
-    print("Odd Number")
+    choice = int(input("Enter choice: "))
 
-# Prime check
-is_prime = True
+    if choice == 9:
+        break
 
-if num < 2:
-    is_prime = False
-else:
-    for i in range(2, num):
-        if num % i == 0:
+    elif choice == 1:
+        num = int(input("enter your number: "))
+
+        if num % 2 == 0:
+            print("Even Number")
+        else:
+            print("Odd Number")
+
+    elif choice == 2:
+        num = int(input("enter your number: "))
+
+        is_prime = True
+
+        if num < 2:
             is_prime = False
-            break
+        else:
+            for i in range(2, num):
+                if num % i == 0:
+                    is_prime = False
+                    break
 
-if is_prime:
-    print("Prime Number")
-else:
-    print("Not Prime Number")
+        if is_prime:
+            print("Prime Number")
+        else:
+            print("Not Prime Number")
 
-# Palindrome check
-rev = 0
-temp = num
+    elif choice == 3:
+        num = int(input("enter your number: "))
+        original = num
 
-while temp > 0:
-    digit = temp % 10
-    rev = rev * 10 + digit
-    temp = temp // 10
+        rev = 0
+        temp = num
 
-print("Reverse:", rev)
+        while temp > 0:
+            digit = temp % 10
+            rev = rev * 10 + digit
+            temp = temp // 10
 
-if rev == original:
-    print("Palindrome")
-else:
-    print("Not Palindrome")
-    
-# Armstrong check
-temp = original
-total = 0
+        print("Reverse:", rev)
 
-while temp > 0:
-    digit = temp % 10
-    total += digit ** 3
-    temp = temp // 10
+        if rev == original:
+            print("Palindrome")
+        else:
+            print("Not Palindrome")
 
-if total == original:
-    print("Armstrong Number")
-else:
-    print("Not Armstrong Number")
-    
-    
-# Factorial check
-factorial = 1
+    elif choice == 4:
+        num = int(input("enter your number: "))
+        original = num
 
-if original < 0:
-    print("Factorial not possible for negative numbers")
-else:
-    for i in range(1, original + 1):
-        factorial *= i
+        total = 0
+        temp = num
 
-    print("Factorial:", factorial)
-    
-    
-# Digit sum
-temp = original
-digit_sum = 0
+        while temp > 0:
+            digit = temp % 10
+            total += digit ** 3
+            temp = temp // 10
 
-while temp > 0:
-    digit = temp % 10
-    digit_sum += digit
-    temp = temp // 10
+        if total == original:
+            print("Armstrong Number")
+        else:
+            print("Not Armstrong Number")
 
-print("Digit Sum:", digit_sum)
+    elif choice == 5:
+        num = int(input("enter your number: "))
 
+        factorial = 1
 
-# Largest digit
-temp = original
-largest = 0
+        if num < 0:
+            print("Factorial not possible for negative numbers")
 
-while temp > 0:
-    digit = temp % 10
+        else:
+            for i in range(1, num + 1):
+                factorial *= i
 
-    if digit > largest:
-        largest = digit
+            print("Factorial:", factorial)
 
-    temp = temp // 10
+    elif choice == 6:
+        num = int(input("enter your number: "))
 
-print("Largest Digit:", largest)
+        digit_sum = 0
+        temp = num
 
+        while temp > 0:
+            digit = temp % 10
+            digit_sum += digit
+            temp = temp // 10
 
-# Smallest digit
-temp = original
-smallest = 9
+        print("Digit Sum:", digit_sum)
 
-while temp > 0:
-    digit = temp % 10
+    elif choice == 7:
+        num = int(input("enter your number: "))
 
-    if digit < smallest:
-        smallest = digit
+        largest = 0
+        temp = num
 
-    temp = temp // 10
+        while temp > 0:
+            digit = temp % 10
 
-print("Smallest Digit:", smallest)
+            if digit > largest:
+                largest = digit
+
+            temp = temp // 10
+
+        print("Largest Digit:", largest)
+
+    elif choice == 8:
+        num = int(input("enter your number: "))
+
+        smallest = 9
+        temp = num
+
+        while temp > 0:
+            digit = temp % 10
+
+            if digit < smallest:
+                smallest = digit
+
+            temp = temp // 10
+
+        print("Smallest Digit:", smallest)
