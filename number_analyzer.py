@@ -52,3 +52,57 @@ if total == original:
     print("Armstrong Number")
 else:
     print("Not Armstrong Number")
+    
+    
+# Factorial check
+factorial = 1
+
+if original < 0:
+    print("Factorial not possible for negative numbers")
+else:
+    for i in range(1, original + 1):
+        factorial *= i
+
+    print("Factorial:", factorial)
+    
+    
+# Digit sum
+temp = original
+digit_sum = 0
+
+while temp > 0:
+    digit = temp % 10
+    digit_sum += digit
+    temp = temp // 10
+
+print("Digit Sum:", digit_sum)
+
+
+# Largest digit
+temp = original
+largest = 0
+
+while temp > 0:
+    digit = temp % 10
+
+    if digit > largest:
+        largest = digit
+
+    temp = temp // 10
+
+print("Largest Digit:", largest)
+
+
+# Smallest digit
+temp = original
+smallest = 9
+
+while temp > 0:
+    digit = temp % 10
+
+    if digit < smallest:
+        smallest = digit
+
+    temp = temp // 10
+
+print("Smallest Digit:", smallest)
